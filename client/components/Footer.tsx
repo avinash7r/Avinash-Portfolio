@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 
 const Footer = () => {
   return (
@@ -38,15 +38,6 @@ const Footer = () => {
               aria-label="Email"
             >
               <Mail className="h-5 w-5" />
-            </a>
-            <a
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-3 rounded-full bg-[#261FB3]/30 text-[#FBE4D6] hover:bg-[#261FB3] transition-colors duration-300"
-              aria-label="Twitter"
-            >
-              <Twitter className="h-5 w-5" />
             </a>
           </div>
         </div>
