@@ -131,7 +131,7 @@ const Hero = () => {
               transition={{ delay: 0.4, duration: 0.8 }}
             >
               <a
-                href="#contact"
+                href="#about"
                 className="px-6 py-3 bg-[#FBE4D6] text-[#0C0950] font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:bg-white"
               >
                 Contact Me
