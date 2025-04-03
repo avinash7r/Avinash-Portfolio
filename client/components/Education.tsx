@@ -11,14 +11,12 @@ const Education = () => {
       institution: "Gokaraju Rangaraju Institute of Engineering and Technology (GRIET)",
       location: "Hyderabad",
       period: "Nov 2022 - Present",
-      grade: "CGPA: 8.3/10",
     },
     {
       degree: "Intermediate in MPC (Maths, Physics, Chemistry)",
       institution: "Vidya Vikas Junior College",
       location: "Bodhan",
       period: "2020 - 2022",
-      grade: "Percentage: 93.6%",
     },
   ]
 
@@ -52,9 +50,6 @@ const Education = () => {
                 <div className="flex items-center mb-2">
                   <Calendar className="h-4 w-4 text-[#FBE4D6] mr-2" />
                   <span className="text-gray-300">{edu.period}</span>
-                </div>
-                <div className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm inline-block">
-                  {edu.grade}
                 </div>
               </div>
             </motion.div>

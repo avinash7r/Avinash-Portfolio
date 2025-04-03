@@ -134,17 +134,11 @@ const About = () => {
               <p className="text-gray-300">
                 Gokaraju Rangaraju Institute of Engineering and Technology
               </p>
-              <p className="text-gray-400 text-sm">
-                2022 - Present | CGPA: 8.3/10
-              </p>
             </div>
             <div>
               <p className="text-white font-medium">Intermediate in MPC</p>
               <p className="text-gray-300">
                 Vidya Vikas Junior College, Bodhan
-              </p>
-              <p className="text-gray-400 text-sm">
-                2020 - 2022 | Percentage: 93.6%
               </p>
             </div>
           </motion.div>
