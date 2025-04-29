@@ -8,6 +8,15 @@ import Image from "next/image"
 const Projects = () => {
   const projects = [
     {
+      title: "ChatUp",
+      description:
+        "Real-time chat platform built with MERN, Zustand, and Socket.IO. Containerized via Docker and deployed on AWS EC2 and Render with optimized low latency.",
+      technologies: ["Node.js", "Express", "MongoDB", "Socket.IO", "Zustand", "Docker", "AWS EC2"],
+      image: "/free-chat-app.jpg?height=300&width=500",
+      github: "https://github.com/avinash7r/full-chatApp.git",
+      demo: "https://full-chatapp-s6f6.onrender.com",
+    },
+    {
       title: "VIVITSU",
       description:
         "Designed and deployed an interactive website for a 24-hour hackathon, centralizing event details, FAQs, and registration. Enhanced participant engagement by 35%, leading to improved event efficiency.",
@@ -15,15 +24,6 @@ const Projects = () => {
       image: "/vivitsu-24.png?height=300&width=500",
       github: "https://github.com/fsw-griet/vivitsu24.git",
       demo: "#",
-    },
-    {
-      title: "ChatUp",
-      description:
-        "Developed a high-performance, full-stack real-time chat application using Node.js, Express, and MongoDB. Integrated Socket.IO for ultra-fast messaging, real-time updates, and online status tracking. Implemented Zustand for optimized state management, ensuring smooth and lag-free UX.",
-      technologies: ["Node.js", "Express", "MongoDB", "Socket.IO", "Zustand"],
-      image: "/free-chat-app.jpg?height=300&width=500",
-      github: "https://github.com/avinash7r/full-chatApp.git",
-      demo: "https://full-chatapp-s6f6.onrender.com",
     },
   ]
 

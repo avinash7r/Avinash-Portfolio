@@ -8,22 +8,17 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: <Code className="h-6 w-6" />,
-    skills: ["C", "Java", "JavaScript", "Python"],
+    skills: ["Python", "JavaScript", "Java", "C"],
   },
   {
-    title: "Frameworks & Libraries",
+    title: "Frontend",
     icon: <Layout className="h-6 w-6" />,
-    skills: ["ReactJS", "Bootstrap", "Tailwind CSS", "ExpressJS"],
+    skills: ["ReactJS", "Tailwind CSS", "Bootstrap"],
   },
   {
-    title: "Software Development",
-    icon: <Terminal className="h-6 w-6" />,
-    skills: ["Data Structures", "Algorithms", "Object-Oriented Programming"],
-  },
-  {
-    title: "APIs & Backend",
+    title: "Backend",
     icon: <Server className="h-6 w-6" />,
-    skills: ["NodeJS", "RESTful APIs", "GraphQL", "WebRTC", "Socket.IO"],
+    skills: ["Node.js", "Express", "REST APIs", "GraphQL", "Socket.IO", "WebRTC"],
   },
   {
     title: "Databases",
@@ -33,12 +28,12 @@ const skillCategories = [
   {
     title: "Tools & Platforms",
     icon: <GitBranch className="h-6 w-6" />,
-    skills: ["Git & GitHub", "Figma", "Canva", "Postman"],
+    skills: ["Git", "Docker", "AWS EC2", "Render", "Postman", "Figma", "Zustand"],
   },
   {
-    title: "Soft Skills",
+    title: "Concepts",
     icon: <Users className="h-6 w-6" />,
-    skills: ["Leadership", "Communication", "Problem-Solving", "Critical Thinking", "Team Collaboration"],
+    skills: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Real-Time Systems"],
   },
 ]
 
@@ -56,8 +51,7 @@ const Skills = () => {
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
-      y: 0,
-      opacity: 1,
+      y: 0, opacity: 1,
     },
   }
 
