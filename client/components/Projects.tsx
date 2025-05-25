@@ -17,6 +17,14 @@ const Projects = () => {
       demo: "https://full-chatapp-s6f6.onrender.com",
     },
     {
+  "title": "NIDS",
+  "description": "Real-time Network Intrusion Detection System using Scapy and XGBoost with a live React dashboard. Captures live network packets, classifies them as normal or malicious, and visualizes results instantly. Fully containerized and deployable using Docker.",
+  "technologies": ["Python", "Scapy", "XGBoost", "React", "WebSocket", "Docker"],
+  "image": "/Real-Time Network Intrusion Detection.png?height=300&width=500",
+  "github": "https://github.com/avinash7r/NIDS-MINI-PROJECT", 
+  "demo": "#" 
+},
+    {
       title: "VIVITSU",
       description:
         "Designed and deployed an interactive website for a 24-hour hackathon, centralizing event details, FAQs, and registration. Enhanced participant engagement by 35%, leading to improved event efficiency.",
