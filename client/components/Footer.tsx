@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
-            <a href="home" className="text-2xl font-bold text-white font-poppins">
+            <a href="#home" className="text-2xl font-bold text-white font-poppins">
               <span className="text-[#FBE4D6]">Avinash</span>
               <span>.dev</span>
             </a>
