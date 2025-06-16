@@ -12,12 +12,12 @@ const Navbar = () => {
   const [mounted, setMounted] = useState(false)
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Skills", href: "#skills" },
-    { name: "Experience", href: "#experience" },
-    { name: "Education", href: "#education" },
-    { name: "Projects", href: "#projects" },
+    { name: "Home", href: "home" },
+    { name: "About", href: "about" },
+    { name: "Skills", href: "skills" },
+    { name: "Experience", href: "experience" },
+    { name: "Education", href: "education" },
+    { name: "Projects", href: "projects" },
   ]
 
   // Handle scroll event to update navbar style
