@@ -18,7 +18,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Avinash Rajure | Portfolio",
   description: "Full-stack developer, tech lead, and ML enthusiast",
-    generator: 'v0.dev'
+    generator: 'v0.dev',
     other: {
     'fast2sms': 'IjKDGyhEJOuCRATqSiZtHZ3seMRIpRYO',
   },
