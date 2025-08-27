@@ -19,6 +19,9 @@ export const metadata: Metadata = {
   title: "Avinash Rajure | Portfolio",
   description: "Full-stack developer, tech lead, and ML enthusiast",
     generator: 'v0.dev'
+    other: {
+    'fast2sms': 'IjKDGyhEJOuCRATqSiZtHZ3seMRIpRYO',
+  },
 }
 
 export default function RootLayout({
@@ -28,7 +31,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <meta name="fast2sms" content="IjKDGyhEJOuCRATqSiZtHZ3seMRIpRYO">
       <body className={`${inter.variable} ${poppins.variable} font-sans`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
           {children}
