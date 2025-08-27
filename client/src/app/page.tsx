@@ -10,8 +10,6 @@ import { ToastContainer, toast } from 'react-toastify';
 
 export default function Home() {
   return (
-    <Head>
-      </Head>
       <Navbar />
       <Hero />
       <About />
