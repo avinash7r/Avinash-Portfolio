@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, Layout, Terminal, GitBranch, Users, Cloud
- } from "lucide-react"
+import { Code, Database, Server, Layout, Terminal, GitBranch, Users, Cloud } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 const skillCategories = [
@@ -14,12 +13,26 @@ const skillCategories = [
   {
     title: "Frontend",
     icon: <Layout className="h-6 w-6" />,
-    skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Bootstrap"],
+    skills: [
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+    ],
   },
   {
     title: "Backend",
     icon: <Server className="h-6 w-6" />,
-    skills: ["Node.js", "Express.js", "RESTful APIs", "GraphQL", "Socket.IO", "WebRTC"],
+    skills: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "GraphQL",
+      "Socket.IO",
+      "WebRTC",
+    ],
   },
   {
     title: "Databases",
@@ -34,7 +47,14 @@ const skillCategories = [
   {
     title: "Frameworks & Tools",
     icon: <GitBranch className="h-6 w-6" />,
-    skills: ["MERN Stack", "Postman", "GitHub", "Zustand", "Notion SDK", "Ollama"],
+    skills: [
+      "MERN Stack",
+      "Postman",
+      "GitHub",
+      "Zustand",
+      "Notion SDK",
+      "Ollama",
+    ],
   },
   {
     title: "Core Concepts",
@@ -45,7 +65,7 @@ const skillCategories = [
       "Real-Time Systems",
     ],
   },
-]
+];
 
 const Skills = () => {
   const containerVariants = {

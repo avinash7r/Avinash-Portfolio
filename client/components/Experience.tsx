@@ -1,38 +1,37 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Briefcase } from "lucide-react"
-import SectionHeading from "./SectionHeading"
+import { motion } from "framer-motion";
+import { Briefcase } from "lucide-react";
+import SectionHeading from "./SectionHeading";
 
 const Experience = () => {
-const experiences = [
-  {
-    title: "Software Development Intern",
-    company: "Will2Care (IGENWILL Pvt. Ltd.)",
-    location: "Hyderabad",
-    period: "Jul 2024 – Present",
-    achievements: [
-      "Developed and optimized backend services using Node.js and Express for healthcare applications.",
-      "Built responsive frontend components with React and modern JavaScript patterns.",
-      "Deployed and maintained applications on AWS EC2 with file storage on S3.",
-      "Worked in Agile teams to deliver scalable features and improve system reliability.",
-      "Applied security best practices and performance tuning for production systems.",
-    ],
-  },
-  {
-    title: "Technical Lead",
-    company: "Free Software Wing (FSW), GRIET",
-    location: "Hyderabad",
-    period: "Nov 2023 – Mar 2025",
-    achievements: [
-      "Led a core technical team of 10–15 students to design, build, and operate the club’s MERN web platform serving 1,000+ registrations.",
-      "Owned backend architecture, CI/CD pipelines, Docker deployments, and AWS hosting to ensure high availability during national events.",
-      "Mentored 50+ students on full-stack development, Git workflows, code reviews, and open-source contribution.",
-      "Managed live operations for large-scale events (24-hour hackathons, FOSSFest), including scaling, incident response, and monitoring.",
-    ],
-  },
-]
-
+  const experiences = [
+    {
+      title: "Software Development Intern",
+      company: "Will2Care (IGENWILL Pvt. Ltd.)",
+      location: "Hyderabad",
+      period: "Jul 2024 – Present",
+      achievements: [
+        "Developed and optimized backend services using Node.js and Express for healthcare applications.",
+        "Built responsive frontend components with React and modern JavaScript patterns.",
+        "Deployed and maintained applications on AWS EC2 with file storage on S3.",
+        "Worked in Agile teams to deliver scalable features and improve system reliability.",
+        "Applied security best practices and performance tuning for production systems.",
+      ],
+    },
+    {
+      title: "Technical Lead",
+      company: "Free Software Wing (FSW), GRIET",
+      location: "Hyderabad",
+      period: "Nov 2023 – Mar 2025",
+      achievements: [
+        "Led a core technical team of 10–15 students to design, build, and operate the club’s MERN web platform serving 1,000+ registrations.",
+        "Owned backend architecture, CI/CD pipelines, Docker deployments, and AWS hosting to ensure high availability during national events.",
+        "Mentored 50+ students on full-stack development, Git workflows, code reviews, and open-source contribution.",
+        "Managed live operations for large-scale events (24-hour hackathons, FOSSFest), including scaling, incident response, and monitoring.",
+      ],
+    },
+  ];
 
   return (
     <section id="experience" className="section-container bg-[#0C0950]/80">
@@ -97,7 +96,12 @@ const experiences = [
       </div>
     </section>
   );
+<<<<<<< HEAD
 }
 
 export default Experience
+=======
+};
+>>>>>>> avi
 
+export default Experience;
