@@ -96,12 +96,6 @@ const Experience = () => {
       </div>
     </section>
   );
-<<<<<<< HEAD
-}
-
-export default Experience
-=======
 };
->>>>>>> avi
 
 export default Experience;
