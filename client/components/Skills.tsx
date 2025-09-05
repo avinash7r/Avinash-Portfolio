@@ -1,41 +1,71 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, Layout, Terminal, GitBranch, Users } from "lucide-react"
+import { Code, Database, Server, Layout, Terminal, GitBranch, Users, Cloud } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 const skillCategories = [
   {
     title: "Programming Languages",
     icon: <Code className="h-6 w-6" />,
-    skills: ["Python", "JavaScript", "Java", "C"],
+    skills: ["JavaScript", "TypeScript", "Java", "Python", "C"],
   },
   {
     title: "Frontend",
     icon: <Layout className="h-6 w-6" />,
-    skills: ["ReactJS", "Tailwind CSS", "Bootstrap"],
+    skills: [
+      "React.js",
+      "Next.js",
+      "HTML5",
+      "CSS3",
+      "Tailwind CSS",
+      "Bootstrap",
+    ],
   },
   {
     title: "Backend",
     icon: <Server className="h-6 w-6" />,
-    skills: ["Node.js", "Express", "REST APIs", "GraphQL", "Socket.IO", "WebRTC"],
+    skills: [
+      "Node.js",
+      "Express.js",
+      "RESTful APIs",
+      "GraphQL",
+      "Socket.IO",
+      "WebRTC",
+    ],
   },
   {
     title: "Databases",
     icon: <Database className="h-6 w-6" />,
-    skills: ["MongoDB", "MySQL"],
+    skills: ["MongoDB", "MySQL", "Database Design", "Query Optimization"],
   },
   {
-    title: "Tools & Platforms",
+    title: "Cloud & DevOps",
+    icon: <Cloud className="h-6 w-6" />,
+    skills: ["AWS (EC2, S3, CloudFront, SNS)", "Docker", "Git", "Linux"],
+  },
+  {
+    title: "Frameworks & Tools",
     icon: <GitBranch className="h-6 w-6" />,
-    skills: ["Git", "Docker", "AWS EC2", "Render", "Postman", "Figma", "Zustand"],
+    skills: [
+      "MERN Stack",
+      "Postman",
+      "GitHub",
+      "Zustand",
+      "Notion SDK",
+      "Ollama",
+    ],
   },
   {
-    title: "Concepts",
-    icon: <Users className="h-6 w-6" />,
-    skills: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Real-Time Systems"],
+    title: "Core Concepts",
+    icon: <Terminal className="h-6 w-6" />,
+    skills: [
+      "Data Structures & Algorithms (DSA)",
+      "Object-Oriented Programming (OOP)",
+      "Real-Time Systems",
+    ],
   },
-]
+];
 
 const Skills = () => {
   const containerVariants = {

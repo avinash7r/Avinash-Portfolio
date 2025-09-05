@@ -7,7 +7,10 @@ import Image from "next/image";
 
 const Hero = () => {
   return (
-    <section id="home" className="h-full min-h-screen pt-32 pb-20 relative overflow-hidden">
+    <section
+      id="home"
+      className="h-full min-h-screen pt-32 pb-20 relative overflow-hidden"
+    >
       {/* Floating elements in background */}
       <FloatingElements />
 
@@ -111,16 +114,20 @@ const Hero = () => {
                     }}
                     className="flex flex-col gap-3 text-[#FBE4D6]"
                   >
-                    <span>Developer</span>
+                    <span>Software Engineer</span>
+                    <span>Full-Stack Developer</span>
+                    <span>Cloud & DevOps</span>
                     <span>Tech Lead</span>
-                    <span>ML Enthusiast</span>
-                    <span>Problem Solver</span>
                   </motion.div>
                 </div>
               </div>
               <p className="mt-4 text-gray-300 text-lg">
-                Building digital experiences with innovative solutions. Specializing in full-stack development,
-                artificial intelligence, and machine learning.
+                Design and ship scalable MERN applications (Node.js, Express,
+                React/Next.js); deploy and maintain services on AWS.
+                <br />
+                Build ML-powered features and real-time systems (Socket.IO,
+                WebRTC), mentor teams, and deliver production-grade,
+                impact-driven solutions.
               </p>
             </motion.div>
 
