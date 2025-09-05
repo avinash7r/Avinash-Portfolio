@@ -1,7 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code, Database, Server, Layout, Terminal, GitBranch, Users } from "lucide-react"
+import { Code, Database, Server, Layout, Terminal, GitBranch, Users, Cloud
+ } from "lucide-react"
 import SectionHeading from "./SectionHeading"
 
 const skillCategories = [

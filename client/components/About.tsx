@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading";
 
 const About = () => {
   return (
-    <section id="about" className="section-container">
+    <section id="about" className="section-container bg-[#0C0950]/80">
       <div className="container mx-auto">
         <SectionHeading>About Me</SectionHeading>
 

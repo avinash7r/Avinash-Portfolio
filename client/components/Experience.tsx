@@ -35,7 +35,7 @@ const experiences = [
 
 
   return (
-    <section id="experience" className="section-container">
+    <section id="experience" className="section-container bg-[#0C0950]/80">
       <div className="container mx-auto">
         <SectionHeading>Work Experience</SectionHeading>
 
@@ -55,14 +55,20 @@ const experiences = [
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 -top-2 w-5 h-5 rounded-full bg-[#FBE4D6] border-4 border-[#0C0950] z-10"></div>
 
-              <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12 md:ml-auto" : "md:pl-12"}`}>
+              <div
+                className={`md:w-1/2 ${
+                  index % 2 === 0 ? "md:pr-12 md:ml-auto" : "md:pl-12"
+                }`}
+              >
                 <div className="bg-[#261FB3]/10 p-6 rounded-lg border border-[#261FB3]/30 backdrop-blur-sm">
                   <div className="flex items-center mb-4">
                     <div className="p-2 rounded-full bg-[#261FB3]/30 text-[#FBE4D6] mr-3">
                       <Briefcase className="h-5 w-5" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
+                      <h3 className="text-xl font-bold text-white">
+                        {exp.title}
+                      </h3>
                       <p className="text-[#FBE4D6]">
                         {exp.company}, {exp.location}
                       </p>
@@ -70,10 +76,14 @@ const experiences = [
                   </div>
 
                   <div className="mb-4">
-                    <span className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm">{exp.period}</span>
+                    <span className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm">
+                      {exp.period}
+                    </span>
                   </div>
 
-                  <h4 className="text-lg font-semibold text-white mb-2">Key Achievements:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-2">
+                    Key Achievements:
+                  </h4>
                   <ul className="list-disc pl-5 text-gray-300 space-y-2">
                     {exp.achievements.map((achievement, i) => (
                       <li key={i}>{achievement}</li>
@@ -86,7 +96,7 @@ const experiences = [
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Experience

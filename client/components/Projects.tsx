@@ -52,7 +52,7 @@ const Projects = () => {
   ]
 
   return (
-    <section id="projects" className="section-container">
+    <section id="projects" className="section-container bg-[#0C0950]/80">
       <div className="container mx-auto">
         <SectionHeading>Projects</SectionHeading>
 
@@ -76,12 +76,17 @@ const Projects = () => {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {project.title}
+                </h3>
                 <p className="text-gray-300 mb-4">{project.description}</p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.technologies.map((tech, techIndex) => (
-                    <span key={techIndex} className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm">
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -113,7 +118,7 @@ const Projects = () => {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 export default Projects
