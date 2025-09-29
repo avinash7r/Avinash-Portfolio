@@ -26,6 +26,6 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: ./client          # 👈 build context
-          file: ./client/Dockerfile  # 👈 Dockerfile path
+          file: Dockerfile  # 👈 Dockerfile path
           push: true                 # 👈 actually push to Docker Hub
           tags: avinashrajure/portfolio:latest
