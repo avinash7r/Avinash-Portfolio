@@ -42,7 +42,15 @@ const skillCategories = [
   {
     title: "Cloud & DevOps",
     icon: <Cloud className="h-6 w-6" />,
-    skills: ["AWS (EC2, S3, CloudFront, SNS)", "Docker", "Git", "Linux"],
+    skills: [
+      "AWS (EC2, S3, CloudFront, SNS)",
+      "Docker",
+      "Git",
+      "Linux",
+      "GitHub Actions",
+      "CI/CD Pipelines",
+      "Terraform (basic)",
+    ],
   },
   {
     title: "Frameworks & Tools",
@@ -51,8 +59,6 @@ const skillCategories = [
       "MERN Stack",
       "Postman",
       "GitHub",
-      "Zustand",
-      "Notion SDK",
       "Ollama",
     ],
   },
@@ -63,9 +69,11 @@ const skillCategories = [
       "Data Structures & Algorithms (DSA)",
       "Object-Oriented Programming (OOP)",
       "Real-Time Systems",
+      "DevOps Best Practices",
     ],
   },
 ];
+
 
 const Skills = () => {
   const containerVariants = {
