@@ -6,47 +6,45 @@ on:
       - devOps
 
 jobs:
-  docker:
+  build-and-push:
     runs-on: ubuntu-latest
-
+    outputs:
+      image-tag: ${{ steps.set-tag.outputs.tag }}
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # 2️⃣ Log in to Docker Hub (use secrets from repo Settings → Secrets → Actions)
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      # 3️⃣ Build and Push image
+      - name: Set image tag
+        id: set-tag
+        run: echo "::set-output name=tag::avinashrajure/portfolio:latest"
+
       - name: Build and Push Docker image
         uses: docker/build-push-action@v5
         with:
-          context: ./client          # 👈 build context
-          push: true                 # 👈 actually push to Docker Hub
-          tags: avinashrajure/portfolio:latest
+          context: ./client
+          push: true
+          tags: ${{ steps.set-tag.outputs.tag }}
 
-      - name: deploy to aws_ec2
+  deploy-to-aws:
+    runs-on: ubuntu-latest
+    needs: build-and-push    # ensures deploy runs after build
+    steps:
+      - name: Deploy to AWS EC2
         uses: appleboy/ssh-action@v0.1.7
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_KEY }}
-
           script: |
-            # Create folder if it doesn't exist
             mkdir -p /home/ec2-user/portfolio
             cd /home/ec2-user/portfolio
-
-            # Pull latest Docker image
             docker pull avinashrajure/portfolio:latest
-
-            # Stop and remove old container if exists
             docker stop portfolio || true
             docker rm portfolio || true
-
-            # Run container
             docker run -d -p 80:3000 --name portfolio avinashrajure/portfolio:latest

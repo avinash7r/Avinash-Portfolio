@@ -43,9 +43,9 @@ const skillCategories = [
     title: "Cloud & DevOps",
     icon: <Cloud className="h-6 w-6" />,
     skills: [
-      "AWS (EC2, S3, CloudFront, SNS)",
-      "Docker",
+      "AWS",
       "Git",
+      "Docker",
       "Linux",
       "GitHub Actions",
       "CI/CD Pipelines",
