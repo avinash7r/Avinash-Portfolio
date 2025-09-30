@@ -1,4 +1,4 @@
-name: dockerizeBuild
+name: Docker Build & AWS Deploy
 
 on:
   push:
@@ -8,10 +8,8 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
-    outputs:
-      image-tag: ${{ steps.set-tag.outputs.tag }}
     steps:
-      - name: Checkout repository
+      - name: Checkout Code
         uses: actions/checkout@v4
 
       - name: Log in to Docker Hub
@@ -20,30 +18,44 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PASSWORD }}
 
-      - name: Set image tag
-        id: set-tag
-        run: echo "::set-output name=tag::avinashrajure/portfolio:latest"
-
-      - name: Build and Push Docker image
+      - name: Build and Push Docker Image
         uses: docker/build-push-action@v5
         with:
           context: ./client
           push: true
-          tags: ${{ steps.set-tag.outputs.tag }}
+          tags: avinashrajure/portfolio:latest # Use a fixed tag for simplicity
 
   deploy-to-aws:
     runs-on: ubuntu-latest
-    needs: build-and-push    # ensures deploy runs after build
+    needs: build-and-push # This job only starts after the image is built and pushed
     steps:
-      - name: Deploy to AWS EC2
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.6.0
+
+      - name: Initialize and Apply Terraform
+        env:
+          # AWS credentials needed for Terraform
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+        run: |
+          cd terraform
+          terraform init
+          terraform apply -auto-approve
+          echo "HOST=$(terraform output -raw portfolio_ec2_public_ip)" >> $GITHUB_ENV
+
+      - name: Deploy Docker to EC2 via SSH
         uses: appleboy/ssh-action@v0.1.7
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ${{ secrets.EC2_USER }}
-          key: ${{ secrets.EC2_KEY }}
+          host: ${{ env.HOST }} # The IP address found by Terraform
+          username: ec2-user
+          key: ${{ secrets.EC2_KEY }} # Private key to access the server
           script: |
-            mkdir -p /home/ec2-user/portfolio
-            cd /home/ec2-user/portfolio
             docker pull avinashrajure/portfolio:latest
             docker stop portfolio || true
             docker rm portfolio || true
