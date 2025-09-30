@@ -47,7 +47,8 @@ jobs:
           cd terraform
           terraform init
           terraform apply -auto-approve
-          echo HOST=$(terraform output -raw portfolio_ec2_public_ip) >> $GITHUB_ENV
+          echo "HOST=$(terraform output -raw portfolio_ec2_public_ip)" >> $GITHUB_ENV
+
           
       - name: Show HOST
         run: echo $HOST
@@ -60,6 +61,7 @@ jobs:
           username: ec2-user
           key: ${{ secrets.EC2_KEY }} # Private key to access the server
           script: |
+            sleep 20
             docker pull avinashrajure/portfolio:latest
             docker stop portfolio || true
             docker rm portfolio || true
