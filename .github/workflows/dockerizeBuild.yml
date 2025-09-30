@@ -50,8 +50,11 @@ jobs:
       - name: Get EC2 Instance ID
         id: get_instance_id
         run: |
-          INSTANCE_ID=$(terraform output -raw portfolio_ec2_instance_id | tr -d '"\r\n')
+          cd terraform
+          terraform output portfolio_ec2_instance_id
+          INSTANCE_ID=$(terraform output -raw portfolio_ec2_instance_id | tr -d '\r\n')
           echo "INSTANCE_ID=$INSTANCE_ID" >> $GITHUB_ENV
+
 
 
 
@@ -61,8 +64,9 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           INSTANCE_ID: ${{ env.INSTANCE_ID }}
         run: |
+          echo "Deploying to EC2 instance $INSTANCE_ID"
           aws ssm send-command \
-            --targets "Key=instanceIds,Values=$INSTANCE_ID" \
+            --targets "Key=InstanceIds,Values=$INSTANCE_ID" \
             --document-name "AWS-RunShellScript" \
             --comment "Deploy portfolio Docker image" \
             --parameters 'commands=[
