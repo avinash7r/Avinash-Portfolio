@@ -47,23 +47,25 @@ jobs:
           terraform init
           terraform apply -auto-approve
 
-      - name: Set HOST environment variable
+      - name: Get EC2 Instance ID
+        id: get_instance_id
         run: |
-          HOST_IP=$(terraform output -raw portfolio_ec2_public_ip | grep -oP '^\S+')
-          echo "HOST=${HOST_IP}" >> $GITHUB_ENV
+          INSTANCE_ID=$(terraform output -raw portfolio_ec2_instance_id | grep -oP '^\S+')
+          echo "id=$INSTANCE_ID" >> $GITHUB_OUTPUT
 
-      - name: Show HOST
-        run: echo $HOST
-
-      - name: Deploy Docker to EC2 via SSH
-        uses: appleboy/ssh-action@v0.1.7
-        with:
-          host: ${{ env.HOST }}
-          username: ec2-user
-          key: ${{ secrets.EC2_KEY }}
-          script: |
-            sleep 20
-            docker pull avinashrajure/portfolio:latest
-            docker stop portfolio || true
-            docker rm portfolio || true
-            docker run -d -p 80:3000 --name portfolio avinashrajure/portfolio:latest
+      - name: Deploy Docker via SSM
+        env:
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          INSTANCE_ID: ${{ steps.get_instance_id.outputs.id }}
+        run: |
+          aws ssm send-command \
+            --targets "Key=instanceIds,Values=$INSTANCE_ID" \
+            --document-name "AWS-RunShellScript" \
+            --comment "Deploy portfolio Docker image" \
+            --parameters 'commands=[
+              "docker pull avinashrajure/portfolio:latest",
+              "docker stop portfolio || true",
+              "docker rm portfolio || true",
+              "docker run -d -p 80:3000 --name portfolio avinashrajure/portfolio:latest"
+            ]' \
+            --region $AWS_REGION
