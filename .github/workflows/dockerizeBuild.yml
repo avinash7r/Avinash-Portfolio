@@ -50,14 +50,16 @@ jobs:
       - name: Get EC2 Instance ID
         id: get_instance_id
         run: |
-          INSTANCE_ID=$(terraform output -raw portfolio_ec2_instance_id | tr -d '"')
-          echo "INSTANCE_ID=${INSTANCE_ID}" >> $GITHUB_ENV
+          INSTANCE_ID=$(terraform output -raw portfolio_ec2_instance_id | tr -d '"\r\n')
+          echo "INSTANCE_ID=$INSTANCE_ID" >> $GITHUB_ENV
+
+
 
 
       - name: Deploy Docker via SSM
         env:
           AWS_REGION: ${{ secrets.AWS_REGION }}
-          INSTANCE_ID: ${{ steps.get_instance_id.outputs.id }}
+          INSTANCE_ID: ${{ env.INSTANCE_ID }}
         run: |
           aws ssm send-command \
             --targets "Key=instanceIds,Values=$INSTANCE_ID" \
