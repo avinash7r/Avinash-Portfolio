@@ -49,7 +49,7 @@ const skillCategories = [
       "Linux",
       "GitHub Actions",
       "CI/CD Pipelines",
-      "Terraform (basic)",
+      "Terraform",
     ],
   },
   {
