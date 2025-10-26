@@ -3,7 +3,7 @@ name: portfolio CI/CD
 on:
   push:
     branches:
-      - devOps
+      - devOpsLearning
   workflow_dispatch:
 
 jobs:
@@ -17,5 +17,5 @@ jobs:
           node-version: "18"
       - name: docker build and run
         run: |
-          docker build -t portfolio-app .
+          docker build -f Dockerfile.prod -t portfolio-app .
           docker run -d -p 3000:3000 portfolio-app
