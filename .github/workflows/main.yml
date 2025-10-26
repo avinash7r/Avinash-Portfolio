@@ -15,7 +15,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: "18"
-      - name: docker build and run
+      - name: Build Docker image
         run: |
-          docker build -f Dockerfile.prod -t portfolio-app .
+          docker build -f client/Dockerfile.prod -t portfolio-app client/
           docker run -d -p 3000:3000 portfolio-app
