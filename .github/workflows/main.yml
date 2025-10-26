@@ -3,7 +3,7 @@ name: portfolio CI/CD
 on:
   push:
     branches:
-      - main
+      - devOps
   workflow_dispatch:
 
 jobs:
@@ -12,7 +12,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - uses: setup-node@v3
+      - uses: actions/setup-node@v3
         with:
           node-version: "18"
       - name: docker build and run
