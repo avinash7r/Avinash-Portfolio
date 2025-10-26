@@ -114,20 +114,22 @@ const Hero = () => {
                     }}
                     className="flex flex-col gap-3 text-[#FBE4D6]"
                   >
-                    <span>Software Engineer</span>
                     <span>Full-Stack Developer</span>
-                    <span>Cloud & DevOps</span>
-                    <span>Tech Lead</span>
+                    <span>DevOps Engineer</span>
+                    <span>Cloud Enthusiast</span>
+                    <span>Technical Lead</span>
                   </motion.div>
                 </div>
               </div>
-              <p className="mt-4 text-gray-300 text-lg">
-                Design and ship scalable MERN applications (Node.js, Express,
-                React/Next.js); deploy and maintain services on AWS.
+
+              <p className="mt-4 text-gray-300 text-lg leading-relaxed">
+                I build scalable full-stack applications using the MERN stack
+                (MongoDB, Express, React/Next.js, Node.js) and automate cloud
+                deployments with Docker, Terraform, and CI/CD pipelines.
                 <br />
-                Build ML-powered features and real-time systems (Socket.IO,
-                WebRTC), mentor teams, and deliver production-grade,
-                impact-driven solutions.
+                Passionate about DevOps, AWS infrastructure, and building
+                reliable, production-grade systems that bridge innovation and
+                impact.
               </p>
             </motion.div>
 

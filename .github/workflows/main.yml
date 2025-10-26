@@ -1,0 +1,21 @@
+name: portfolio CI/CD
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  docker_build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: setup-node@v3
+        with:
+          node-version: "18"
+      - name: docker build and run
+        run: |
+          docker build -t portfolio-app .
+          docker run -d -p 3000:3000 portfolio-app

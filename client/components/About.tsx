@@ -19,20 +19,37 @@ const About = () => {
             className="flex flex-col justify-center"
           >
             <h3 className="text-2xl font-bold mb-4 text-[#FBE4D6]">
-              Full-stack Developer & Tech Lead
+              Full-Stack & DevOps Developer
             </h3>
             <p className="text-gray-300 mb-4">
-              I'm Avinash Rajure, a passionate full-stack developer and
-              technical lead with expertise in the MERN stack. I specialize in
-              building innovative digital solutions and leading technical teams
-              to success.
+              I'm Avinash Rajure, a final-year B.Tech student specializing in
+              Artificial Intelligence and Machine Learning at GRIET, Hyderabad.
+              I’m a dedicated{" "}
+              <span className="text-[#FBE4D6]">
+                Full-Stack and DevOps Developer
+              </span>
+              with a strong passion for building scalable web applications,
+              designing robust backend systems, and automating cloud
+              deployments.
             </p>
             <p className="text-gray-300 mb-6">
-              Currently serving as a Technical Lead at Free Software Wing in
-              Hyderabad, I've led hackathons, maintained club websites, and
-              mentored students in open-source development. I'm dedicated to
-              creating efficient, user-friendly applications while continuously
-              expanding my knowledge in AI and machine learning.
+              I recently completed my internship as a
+              <span className="text-[#FBE4D6]">
+                {" "}
+                Software Development Intern at Will2Care (IGENWILL Pvt. Ltd.)
+              </span>
+              , where I developed and maintained full-stack applications,
+              optimized system performance, and implemented CI/CD pipelines
+              using Docker, AWS, and Terraform. Previously, as the
+              <span className="text-[#FBE4D6]">
+                {" "}
+                Technical Lead at the Free Software Wing (FSW)
+              </span>
+              , I led developer teams, organized national-level hackathons, and
+              promoted open-source software adoption by building event
+              management platforms hosted on AWS. My current focus is on
+              scalable backend systems, DevOps automation, and cloud-native
+              development.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
@@ -133,6 +150,7 @@ const About = () => {
               </p>
               <p className="text-gray-300">
                 Gokaraju Rangaraju Institute of Engineering and Technology
+                (2022–2026)
               </p>
             </div>
             <div>

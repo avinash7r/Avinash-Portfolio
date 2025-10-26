@@ -8,19 +8,12 @@ const skillCategories = [
   {
     title: "Programming Languages",
     icon: <Code className="h-6 w-6" />,
-    skills: ["JavaScript", "TypeScript", "Java", "Python", "C"],
+    skills: ["JavaScript", "TypeScript", "Python", "Java", "C"],
   },
   {
     title: "Frontend",
     icon: <Layout className="h-6 w-6" />,
-    skills: [
-      "React.js",
-      "Next.js",
-      "HTML5",
-      "CSS3",
-      "Tailwind CSS",
-      "Bootstrap",
-    ],
+    skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Figma"],
   },
   {
     title: "Backend",
@@ -29,20 +22,33 @@ const skillCategories = [
       "Node.js",
       "Express.js",
       "RESTful APIs",
-      "GraphQL",
-      "Socket.IO",
-      "WebRTC",
+      "Microservices",
+      "WebSockets (Socket.IO)",
+      "Authentication (JWT, OAuth)",
     ],
   },
   {
     title: "Databases",
     icon: <Database className="h-6 w-6" />,
-    skills: ["MongoDB", "MySQL", "Database Design", "Query Optimization"],
+    skills: [
+      "MongoDB",
+      "MySQL",
+      "Database Design",
+      "Query Optimization",
+      "Mongoose ODM",
+    ],
   },
   {
     title: "Cloud & DevOps",
     icon: <Cloud className="h-6 w-6" />,
-    skills: ["AWS (EC2, S3, CloudFront, SNS)", "Docker", "Git", "Linux"],
+    skills: [
+      "AWS (EC2, S3, CloudFront, SNS)",
+      "Docker",
+      "Terraform",
+      "CI/CD Pipelines (GitHub Actions)",
+      "Linux",
+      "Nginx",
+    ],
   },
   {
     title: "Frameworks & Tools",
@@ -50,10 +56,9 @@ const skillCategories = [
     skills: [
       "MERN Stack",
       "Postman",
-      "GitHub",
-      "Zustand",
-      "Notion SDK",
-      "Ollama",
+      "Git & GitHub",
+      "Ollama (Local LLMs)",
+      "Gemini API",
     ],
   },
   {
@@ -61,8 +66,11 @@ const skillCategories = [
     icon: <Terminal className="h-6 w-6" />,
     skills: [
       "Data Structures & Algorithms (DSA)",
+      "System Design",
       "Object-Oriented Programming (OOP)",
+      "Cloud Architecture",
       "Real-Time Systems",
+      "AI Integration",
     ],
   },
 ];
