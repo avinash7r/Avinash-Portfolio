@@ -12,11 +12,11 @@ const experiences = [
     location: "Hyderabad",
     period: "Jul 2025 – Oct 2025",
     achievements: [
-      "Developing and maintaining production-grade web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-      "Optimized backend APIs for scalability and reliability, integrating authentication, file handling, and secure communication layers.",
-      "Implemented CI/CD pipelines using GitHub Actions and Docker for streamlined deployment to AWS EC2.",
-      "Collaborated in Agile sprints to deliver feature-rich, responsive interfaces improving user experience and system performance.",
-      "Applied DevOps practices including infrastructure automation and containerized environments to enhance release stability.",
+      "Developed and maintained production-grade web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
+      "Optimized backend APIs for scalability and reliability, implementing authentication, file handling, and secure communication layers.",
+      "Worked with GitHub Actions and Docker to support deployment workflows targeting AWS EC2 environments.",
+      "Collaborated in Agile sprints to deliver responsive, feature-rich interfaces, improving overall system performance and usability.",
+      "Applied containerized development and automation practices to improve release consistency and deployment stability.",
     ],
   },
   {
@@ -25,14 +25,15 @@ const experiences = [
     location: "Hyderabad",
     period: "Nov 2023 – Mar 2025",
     achievements: [
-      "Led a technical team of 10–15 developers in building and maintaining the club’s MERN-based web platforms for major college events.",
-      "Architected and deployed full-stack systems using AWS, Docker, and CI/CD pipelines for high-performance and fault-tolerant delivery.",
-      "Organized and managed large-scale events including FOSSFest and 24-hour hackathons, handling 400+ participants across India.",
-      "Mentored 50+ students in modern web development, Git, open-source contribution, and backend system design.",
-      "Promoted free and open-source software adoption through hands-on workshops, collaborative projects, and community-driven initiatives.",
+      "Led a technical team of 10–15 developers to build and maintain MERN-based platforms for large-scale college events.",
+      "Designed and deployed full-stack applications using AWS and Docker, focusing on reliability and maintainability.",
+      "Organized and managed national-level events including FOSSFest and 24-hour hackathons with 400+ participants.",
+      "Mentored 50+ students in web development fundamentals, Git workflows and backend design.",
+      "Promoted free and open-source software through workshops, collaborative projects, and community-driven initiatives.",
     ],
   },
 ];
+
 
 
   return (

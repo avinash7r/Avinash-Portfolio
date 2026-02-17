@@ -1,16 +1,49 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { ExternalLink, Github } from "lucide-react"
-import SectionHeading from "./SectionHeading"
-import Image from "next/image"
+import { motion } from "framer-motion";
+import { ExternalLink, Github } from "lucide-react";
+import SectionHeading from "./SectionHeading";
+import Image from "next/image";
 
 const Projects = () => {
   const projects = [
     {
+      title: "AutoKube – Automated Kubernetes Cluster with Ansible",
+      description:
+        "An automated multi-node Kubernetes cluster orchestration project using Ansible and kubeadm. Provisions a production-style control plane and worker nodes on AWS EC2 with fully idempotent, role-based automation. The entire cluster lifecycle is managed through a single master playbook, ensuring safe execution order and dynamic worker node joining.",
+      technologies: [
+        "Ansible",
+        "Kubernetes (kubeadm)",
+        "containerd",
+        "Calico CNI",
+        "Linux",
+        "AWS EC2",
+      ],
+      image: "/AutoKube.png?height=300&width=500",
+      github: "https://github.com/avinash7r/AutoKube",
+      demo: "https://github.com/avinash7r/AutoKube",
+    },
+    {
+      title: "DevOps Local Lab Platform",
+      description:
+        "A fully automated local DevOps platform that provisions a production-like Kubernetes environment on a laptop. Built using Docker, kind, a local container registry, and Argo CD, with a single CLI to manage the entire lifecycle (up, down, status, destroy). Designed to understand real-world DevOps concepts like registry mirrors, GitOps, idempotency, and infrastructure automation.",
+      technologies: [
+        "Docker",
+        "Kubernetes (kind)",
+        "Local Container Registry",
+        "Argo CD",
+        "Bash Scripting",
+        "GitOps",
+      ],
+      image: "/LocalLab.png?height=300&width=500",
+      github: "https://github.com/avinash7r/Devops-Local-Lab",
+      demo: "https://github.com/avinash7r/Devops-Local-Lab",
+    },
+
+    {
       title: "WhatsApp → Notion AI Bridge",
       description:
-        "A smart placement message parser that uses whatsapp-web.js and a local LLM (Mistral via Ollama) to extract structured data from WhatsApp and sync it to a Notion dashboard. Designed for campus placement automation — built in a day, runs fully offline.",
+        "A smart placement message parser that uses whatsapp-web.js and a local LLM (Mistral via Ollama) to extract structured data from WhatsApp and sync it to a Notion dashboard. Designed for campus placement automation - built in a day, runs fully offline.",
       technologies: [
         "Node.js",
         "Express",
@@ -135,7 +168,6 @@ const Projects = () => {
       </div>
     </section>
   );
-}
+};
 
-export default Projects
-
+export default Projects;

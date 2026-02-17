@@ -19,37 +19,31 @@ const About = () => {
             className="flex flex-col justify-center"
           >
             <h3 className="text-2xl font-bold mb-4 text-[#FBE4D6]">
-              Full-Stack & DevOps Developer
+              DevOps Engineer & Cloud Developer
             </h3>
             <p className="text-gray-300 mb-4">
-              I'm Avinash Rajure, a final-year B.Tech student specializing in
-              Artificial Intelligence and Machine Learning at GRIET, Hyderabad.
-              I’m a dedicated{" "}
-              <span className="text-[#FBE4D6]">
-                Full-Stack and DevOps Developer
-              </span>
-              with a strong passion for building scalable web applications,
-              designing robust backend systems, and automating cloud
-              deployments.
+              I'm Avinash Rajure, a final-year B.Tech student at GRIET,
+              Hyderabad, with a strong interest in DevOps and cloud engineering.
+              I focus on understanding and building automated, scalable
+              infrastructure using Docker, Kubernetes, and Terraform on
+              Linux-based systems.
             </p>
+
             <p className="text-gray-300 mb-6">
-              I recently completed my internship as a
+              I previously interned as a
               <span className="text-[#FBE4D6]">
                 {" "}
                 Software Development Intern at Will2Care (IGENWILL Pvt. Ltd.)
               </span>
-              , where I developed and maintained full-stack applications,
-              optimized system performance, and implemented CI/CD pipelines
-              using Docker, AWS, and Terraform. Previously, as the
+              , where I worked on full-stack applications, backend performance
+              improvements, and cloud deployments on AWS. As the
               <span className="text-[#FBE4D6]">
                 {" "}
                 Technical Lead at the Free Software Wing (FSW)
               </span>
-              , I led developer teams, organized national-level hackathons, and
-              promoted open-source software adoption by building event
-              management platforms hosted on AWS. My current focus is on
-              scalable backend systems, DevOps automation, and cloud-native
-              development.
+              , I led student developer teams, built event platforms, and
+              handled deployment and hosting responsibilities while promoting
+              open-source software.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">

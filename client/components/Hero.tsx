@@ -9,12 +9,12 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="h-full min-h-screen pt-32 pb-20 relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden"
     >
       {/* Floating elements in background */}
       <FloatingElements />
 
-      <div className="container h-full mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-6 py-20 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <motion.div
             className="md:w-2/5 relative"
@@ -114,22 +114,17 @@ const Hero = () => {
                     }}
                     className="flex flex-col gap-3 text-[#FBE4D6]"
                   >
-                    <span>Full-Stack Developer</span>
                     <span>DevOps Engineer</span>
-                    <span>Cloud Enthusiast</span>
-                    <span>Technical Lead</span>
+                    <span>Cloud Engineering Enthusiast</span>
+                    <span>DevOps Engineer</span>
                   </motion.div>
                 </div>
               </div>
-
               <p className="mt-4 text-gray-300 text-lg leading-relaxed">
-                I build scalable full-stack applications using the MERN stack
-                (MongoDB, Express, React/Next.js, Node.js) and automate cloud
-                deployments with Docker, Terraform, and CI/CD pipelines.
-                <br />
-                Passionate about DevOps, AWS infrastructure, and building
-                reliable, production-grade systems that bridge innovation and
-                impact.
+                DevOps Engineer focused on automating cloud infrastructure and
+                delivery pipelines using Docker, Kubernetes, Terraform, and
+                CI/CD. Hands-on experience with Linux and AWS, building
+                reliable, reproducible, production-ready systems.
               </p>
             </motion.div>
 

@@ -5,75 +5,124 @@ import { Code, Database, Server, Layout, Terminal, GitBranch, Users, Cloud } fro
 import SectionHeading from "./SectionHeading"
 
 const skillCategories = [
+  // {
+  //   title: "Cloud & DevOps",
+  //   icon: <Cloud className="h-6 w-6" />,
+  //   skills: [
+  //     "Linux",
+  //     "Docker",
+  //     "Kubernetes",
+  //     "kubeadm (Cluster Bootstrap)",
+  //     "Helm",
+  //     "Ansible",
+  //     "Terraform (IaC)",
+  //     "AWS (EC2, S3, CloudFront, IAM basics)",
+  //     "Nginx",
+  //     "Grafana (Monitoring basics)",
+  //   ],
+  // },
+  // {
+  //   title: "Tools & Platforms",
+  //   icon: <GitBranch className="h-6 w-6" />,
+  //   skills: [
+  //     "Git & GitHub",
+  //     "GitHub Actions",
+  //     "Argo CD",
+  //     "Postman",
+  //     "Ollama (Local LLMs)",
+  //     "Gemini API",
+  //   ],
+  // },
+  // {
+  //   title: "Backend",
+  //   icon: <Server className="h-6 w-6" />,
+  //   skills: [
+  //     "Node.js",
+  //     "Express.js",
+  //     "REST APIs",
+  //     "WebSockets (Socket.IO)",
+  //     "Authentication (JWT)",
+  //     "Backend Performance Optimization",
+  //   ],
+  // },
+  // {
+  //   title: "Core Concepts",
+  //   icon: <Terminal className="h-6 w-6" />,
+  //   skills: [
+  //     "System Design Basics",
+  //     "Networking Fundamentals",
+  //     "Containers & Orchestration",
+  //     "Infrastructure as Code",
+  //     "Cloud Architecture Basics",
+  //     "Real-Time Systems",
+  //   ],
+  // },
   {
-    title: "Programming Languages",
-    icon: <Code className="h-6 w-6" />,
-    skills: ["JavaScript", "TypeScript", "Python", "Java", "C"],
-  },
-  {
-    title: "Frontend",
-    icon: <Layout className="h-6 w-6" />,
-    skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS", "Figma"],
-  },
-  {
-    title: "Backend",
-    icon: <Server className="h-6 w-6" />,
-    skills: [
-      "Node.js",
-      "Express.js",
-      "RESTful APIs",
-      "Microservices",
-      "WebSockets (Socket.IO)",
-      "Authentication (JWT, OAuth)",
-    ],
-  },
-  {
-    title: "Databases",
-    icon: <Database className="h-6 w-6" />,
-    skills: [
-      "MongoDB",
-      "MySQL",
-      "Database Design",
-      "Query Optimization",
-      "Mongoose ODM",
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
+    title: "Cloud & Infrastructure",
     icon: <Cloud className="h-6 w-6" />,
     skills: [
-      "AWS (EC2, S3, CloudFront, SNS)",
-      "Docker",
-      "Terraform",
-      "CI/CD Pipelines (GitHub Actions)",
+      "AWS (EC2, S3, CloudFront, IAM basics)",
       "Linux",
+      "Cloud Architecture Basics",
+      "Networking Fundamentals",
       "Nginx",
     ],
   },
   {
-    title: "Frameworks & Tools",
-    icon: <GitBranch className="h-6 w-6" />,
+    title: "Containers & Orchestration",
+    icon: <Layout className="h-6 w-6" />,
     skills: [
-      "MERN Stack",
-      "Postman",
-      "Git & GitHub",
-      "Ollama (Local LLMs)",
-      "Gemini API",
+      "Docker",
+      "Kubernetes",
+      "kubeadm (Cluster Bootstrap)",
+      "Helm",
+      "Containers & Orchestration",
     ],
   },
   {
-    title: "Core Concepts",
-    icon: <Terminal className="h-6 w-6" />,
+    title: "Infrastructure as Code & Automation",
+    icon: <Code className="h-6 w-6" />,
     skills: [
-      "Data Structures & Algorithms (DSA)",
-      "System Design",
-      "Object-Oriented Programming (OOP)",
-      "Cloud Architecture",
-      "Real-Time Systems",
-      "AI Integration",
+      "Terraform (IaC)",
+      "Ansible",
+      "GitOps (Argo CD)",
+      "Infrastructure as Code",
     ],
   },
+  {
+    title: "CI/CD & DevOps Tooling",
+    icon: <GitBranch className="h-6 w-6" />,
+    skills: ["Git & GitHub", "GitHub Actions", "Argo CD", "CI/CD Pipelines"],
+  },
+  {
+    title: "Monitoring & Observability",
+    icon: <Database className="h-6 w-6" />,
+    skills: [
+      "Grafana (Monitoring basics)",
+      "Metrics & Dashboards",
+      "System Health Monitoring",
+    ],
+  },
+  {
+    title: "Backend & APIs",
+    icon: <Server className="h-6 w-6" />,
+    skills: [
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "WebSockets (Socket.IO)",
+      "Authentication (JWT)",
+      "Backend Performance Optimization",
+      "Real-Time Systems",
+    ],
+  },
+  {
+    title: "Developer & AI Tooling",
+    icon: <Terminal className="h-6 w-6" />,
+    skills: ["Postman", "Ollama (Local LLMs)", "Gemini API"],
+  },
 ];
+
 
 const Skills = () => {
   const containerVariants = {
