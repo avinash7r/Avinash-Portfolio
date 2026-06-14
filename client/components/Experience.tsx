@@ -7,16 +7,29 @@ import SectionHeading from "./SectionHeading";
 const Experience = () => {
 const experiences = [
   {
+    title: "Software Development Engineer Intern",
+    company: "Alemeno",
+    location: "Hyderabad",
+    period: "April 2025 – Present",
+    achievements: [
+      "Provisioned production-grade AWS infrastructure using Terraform, including custom VPCs, public/private/isolated subnets, NAT Gateway, EKS clusters, RDS PostgreSQL, IAM roles, and OIDC/IRSA integration for Kubernetes workload identity.",
+      "Deployed and operated containerized applications on Amazon EKS using Kubernetes deployments, services, secrets, configmaps, and rolling update strategies.",
+      "Configured Kubernetes Gateway API with AWS Load Balancer Controller (ALB) to manage scalable HTTP routing for cloud-native microservices.",
+      "Implemented IRSA (IAM Roles for Service Accounts) enabling Kubernetes workloads to authenticate with AWS services without static credentials.",
+      "Built GitHub Actions CI/CD pipelines with Docker Buildx layer caching, path-based selective builds, immutable SHA-based image tagging, and automated Docker Hub publishing.",
+      "Configured Argo CD for GitOps-based continuous delivery, automated Kubernetes reconciliation, and rolling deployments on EKS clusters.",
+      "Developed secure Django backend systems with authentication workflows for high-reliability verification pipelines.",
+    ],
+  },
+  {
     title: "Software Development Intern",
     company: "Will2Care (IGENWILL Pvt. Ltd.)",
     location: "Hyderabad",
     period: "Jul 2025 – Oct 2025",
     achievements: [
-      "Developed and maintained production-grade web applications using the MERN stack (MongoDB, Express.js, React.js, Node.js).",
-      "Optimized backend APIs for scalability and reliability, implementing authentication, file handling, and secure communication layers.",
-      "Worked with GitHub Actions and Docker to support deployment workflows targeting AWS EC2 environments.",
-      "Collaborated in Agile sprints to deliver responsive, feature-rich interfaces, improving overall system performance and usability.",
-      "Applied containerized development and automation practices to improve release consistency and deployment stability.",
+      "Built and optimized backend services using Node.js and Express.js for healthcare platform APIs serving production users.",
+      "Deployed and managed applications on AWS EC2; configured S3 for secure file storage and content distribution.",
+      "Developed frontend components using React within an Agile team, delivering scalable features with security best practices.",
     ],
   },
   {
@@ -25,11 +38,9 @@ const experiences = [
     location: "Hyderabad",
     period: "Nov 2023 – Mar 2025",
     achievements: [
-      "Led a technical team of 10–15 developers to build and maintain MERN-based platforms for large-scale college events.",
-      "Designed and deployed full-stack applications using AWS and Docker, focusing on reliability and maintainability.",
-      "Organized and managed national-level events including FOSSFest and 24-hour hackathons with 400+ participants.",
-      "Mentored 50+ students in web development fundamentals, Git workflows and backend design.",
-      "Promoted free and open-source software through workshops, collaborative projects, and community-driven initiatives.",
+      "Led a 10–15 member team to build and operate a MERN-stack event platform handling 1,000+ registrations with real-time features using Docker deployments on AWS.",
+      "Owned backend architecture, CI/CD pipelines, and incident response for national-level events including 24-hour hackathons and FOSSFest.",
+      "Mentored 50+ students on full-stack development, code reviews, and DevOps practices.",
     ],
   },
 ];

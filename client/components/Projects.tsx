@@ -8,6 +8,40 @@ import Image from "next/image";
 const Projects = () => {
   const projects = [
     {
+      title: "AWS EKS GitOps Infrastructure Platform",
+      description:
+        "Provisioned production-style AWS infrastructure using Terraform: custom VPC, public/private/isolated subnets, NAT Gateway, ALB, Amazon EKS cluster, and RDS PostgreSQL in isolated database subnets. Implemented IAM/OIDC/IRSA for secure Kubernetes-to-AWS authentication without static credentials. Built GitHub Actions CI/CD with Docker Buildx caching, SHA-tagged immutable images, and Argo CD for full GitOps delivery from Git commit to automated EKS rolling update.",
+      technologies: [
+        "Terraform",
+        "AWS EKS",
+        "RDS PostgreSQL",
+        "GitHub Actions",
+        "Argo CD",
+        "Docker",
+        "Kubernetes",
+      ],
+      image: "/placeholder.svg?height=300&width=500",
+      github: "https://github.com/avinash7r/aws-eks-gitops",
+      demo: "https://github.com/avinash7r/aws-eks-gitops",
+    },
+    {
+      title: "Cloud-Native Kubernetes GitOps Platform",
+      description:
+        "Deployed frontend (Nginx) and backend (Node.js) as separate Kubernetes deployments on a local kind cluster with ingress-based path routing. Instrumented backend with Prometheus metrics (request count, HTTP status codes, latency histograms) and validated observability via PromQL. Implemented full GitOps pipeline: GitHub Actions CI → Kustomize image update → Argo CD reconciliation → cluster convergence, using immutable SHA-based image tagging.",
+      technologies: [
+        "Kubernetes",
+        "kind",
+        "Argo CD",
+        "Kustomize",
+        "Prometheus",
+        "GitHub Actions",
+        "Docker",
+      ],
+      image: "/placeholder.svg?height=300&width=500",
+      github: "https://github.com/avinash7r/k8s-gitops-platform",
+      demo: "https://github.com/avinash7r/k8s-gitops-platform",
+    },
+    {
       title: "AutoKube – Automated Kubernetes Cluster with Ansible",
       description:
         "An automated multi-node Kubernetes cluster orchestration project using Ansible and kubeadm. Provisions a production-style control plane and worker nodes on AWS EC2 with fully idempotent, role-based automation. The entire cluster lifecycle is managed through a single master playbook, ensuring safe execution order and dynamic worker node joining.",

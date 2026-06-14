@@ -30,20 +30,26 @@ const About = () => {
             </p>
 
             <p className="text-gray-300 mb-6">
-              I previously interned as a
+              Currently interning as a
               <span className="text-[#FBE4D6]">
                 {" "}
-                Software Development Intern at Will2Care (IGENWILL Pvt. Ltd.)
+                Software Development Engineer Intern at Alemeno
               </span>
-              , where I worked on full-stack applications, backend performance
-              improvements, and cloud deployments on AWS. As the
+              , where I provision production-grade AWS infrastructure using
+              Terraform, operate containerized workloads on Amazon EKS, and
+              build GitHub Actions CI/CD pipelines with GitOps delivery via
+              Argo CD. I previously interned at
+              <span className="text-[#FBE4D6]">
+                {" "}
+                Will2Care (IGENWILL Pvt. Ltd.)
+              </span>
+              , working on Node.js/Express backend APIs and AWS deployments. As
               <span className="text-[#FBE4D6]">
                 {" "}
                 Technical Lead at the Free Software Wing (FSW)
               </span>
               , I led student developer teams, built event platforms, and
-              handled deployment and hosting responsibilities while promoting
-              open-source software.
+              mentored 50+ students.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">

@@ -115,8 +115,8 @@ const Hero = () => {
                     className="flex flex-col gap-3 text-[#FBE4D6]"
                   >
                     <span>DevOps Engineer</span>
-                    <span>Cloud Engineering Enthusiast</span>
-                    <span>DevOps Engineer</span>
+                    <span>Platform Engineer</span>
+                    <span>Cloud Engineer</span>
                   </motion.div>
                 </div>
               </div>
