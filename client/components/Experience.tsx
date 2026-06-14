@@ -1,10 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Briefcase } from "lucide-react";
+import { Briefcase, ChevronDown, ChevronUp } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 
 const Experience = () => {
+  const [showAll, setShowAll] = useState(false);
 const experiences = [
   {
     title: "Software Development Engineer Intern",
@@ -56,7 +58,7 @@ const experiences = [
           {/* Timeline line */}
           <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 h-full w-1 bg-[#261FB3]/50"></div>
 
-          {experiences.map((exp, index) => (
+          {(showAll ? experiences : experiences.slice(0, 1)).map((exp, index) => (
             <motion.div
               key={index}
               className="relative mb-12"
@@ -107,6 +109,21 @@ const experiences = [
             </motion.div>
           ))}
         </div>
+
+        {experiences.length > 1 && (
+          <div className="flex justify-center mt-6">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="flex items-center gap-2 px-6 py-3 border border-[#FBE4D6] text-[#FBE4D6] font-medium rounded-full hover:bg-[#FBE4D6]/10 transition-all duration-300"
+            >
+              {showAll ? (
+                <>Show Less <ChevronUp className="h-4 w-4" /></>
+              ) : (
+                <>Show More <ChevronDown className="h-4 w-4" /></>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

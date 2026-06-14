@@ -1,11 +1,13 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 
 const Projects = () => {
+  const [showAll, setShowAll] = useState(false);
   const projects = [
     {
       title: "AWS EKS GitOps Infrastructure Platform",
@@ -140,7 +142,7 @@ const Projects = () => {
         <SectionHeading>Projects</SectionHeading>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-          {projects.map((project, index) => (
+          {(showAll ? projects : projects.slice(0, 4)).map((project, index) => (
             <motion.div
               key={index}
               className="bg-[#261FB3]/10 rounded-lg overflow-hidden border border-[#261FB3]/30 backdrop-blur-sm hover:shadow-lg hover:shadow-[#261FB3]/10 transition-all duration-300"
@@ -199,6 +201,25 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        {projects.length > 4 && (
+          <div className="flex justify-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="flex items-center gap-2 px-6 py-3 border border-[#FBE4D6] text-[#FBE4D6] font-medium rounded-full hover:bg-[#FBE4D6]/10 transition-all duration-300"
+            >
+              {showAll ? (
+                <>
+                  Show Less <ChevronUp className="h-4 w-4" />
+                </>
+              ) : (
+                <>
+                  Show More <ChevronDown className="h-4 w-4" />
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );
