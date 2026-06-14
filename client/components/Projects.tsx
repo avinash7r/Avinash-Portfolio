@@ -1,13 +1,25 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
-import { ExternalLink, Github, ChevronDown, ChevronUp } from "lucide-react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ExternalLink, Github, ChevronDown, ChevronUp, X } from "lucide-react";
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
 
 const Projects = () => {
   const [showAll, setShowAll] = useState(false);
+  const [lightbox, setLightbox] = useState<{ src: string; alt: string } | null>(
+    null,
+  );
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
   const projects = [
     {
       title: "AWS EKS GitOps Infrastructure Platform",
@@ -58,7 +70,6 @@ const Projects = () => {
       github: "https://github.com/avinash7r/Devops-Local-Lab",
       demo: "https://github.com/avinash7r/Devops-Local-Lab",
     },
-
     {
       title: "WhatsApp → Notion AI Bridge",
       description:
@@ -119,65 +130,77 @@ const Projects = () => {
     },
   ];
 
+  const visible = showAll ? projects : projects.slice(0, 4);
+
   return (
-    <section id="projects" className="section-container bg-[#0C0950]/80">
+    <section id="projects" className="section-container bg-[#0E0B08]">
       <div className="container mx-auto">
         <SectionHeading>Projects</SectionHeading>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-          {(showAll ? projects : projects.slice(0, 4)).map((project, index) => (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8 md:mt-12">
+          {visible.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-[#261FB3]/10 rounded-lg overflow-hidden border border-[#261FB3]/30 backdrop-blur-sm hover:shadow-lg hover:shadow-[#261FB3]/10 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
+              className="bg-[#1C1814] rounded-2xl overflow-hidden border border-[#2A2018] hover:border-[#E07838]/25 transition-all duration-300 flex flex-col"
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <div className="relative h-60 overflow-hidden">
+              <div
+                className="relative h-44 sm:h-52 overflow-hidden bg-[#13100C] cursor-zoom-in"
+                onClick={() =>
+                  setLightbox({
+                    src: project.image || "/placeholder.svg",
+                    alt: project.title,
+                  })
+                }
+              >
                 <Image
                   src={project.image || "/placeholder.svg"}
                   alt={project.title}
                   fill
-                  className="object-cover transition-transform duration-500 hover:scale-110"
+                  className="object-cover transition-transform duration-500 hover:scale-105 opacity-90"
                 />
               </div>
 
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-white mb-2">
+              <div className="p-4 sm:p-6 flex flex-col flex-1">
+                <h3 className="text-base font-bold text-[#EDE4D6] mb-2">
                   {project.title}
                 </h3>
-                <p className="text-gray-300 mb-4">{project.description}</p>
+                <p className="text-[#8C7C6E] text-sm leading-relaxed mb-4 flex-1">
+                  {project.description}
+                </p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-1.5 mb-5">
                   {project.technologies.map((tech, techIndex) => (
                     <span
                       key={techIndex}
-                      className="px-3 py-1 bg-[#FBE4D6]/10 text-[#FBE4D6] rounded-full text-sm"
+                      className="px-2.5 py-1 bg-[#2A2018] text-[#8C7C6E] rounded-lg text-xs"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex gap-3">
                   <a
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 bg-[#261FB3]/50 text-white rounded-full hover:bg-[#261FB3] transition-colors duration-300"
+                    className="flex items-center gap-1.5 px-4 py-2 border border-[#2A2018] text-[#8C7C6E] text-sm rounded-full hover:border-[#E07838] hover:text-[#E07838] transition-all duration-300"
                   >
-                    <Github className="h-4 w-4 mr-2" />
+                    <Github className="h-3.5 w-3.5" />
                     Code
                   </a>
                   <a
                     href={project.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center px-4 py-2 bg-[#FBE4D6] text-[#0C0950] rounded-full hover:bg-white transition-colors duration-300"
+                    className="flex items-center gap-1.5 px-4 py-2 bg-[#E07838] text-[#0E0B08] text-sm font-semibold rounded-full hover:bg-[#F08848] transition-all duration-300"
                   >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Live Demo
+                    <ExternalLink className="h-3.5 w-3.5" />
+                    Demo
                   </a>
                 </div>
               </div>
@@ -189,7 +212,7 @@ const Projects = () => {
           <div className="flex justify-center mt-10">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="flex items-center gap-2 px-6 py-3 border border-[#FBE4D6] text-[#FBE4D6] font-medium rounded-full hover:bg-[#FBE4D6]/10 transition-all duration-300"
+              className="flex items-center gap-2 px-6 py-2.5 border border-[#2A2018] text-[#8C7C6E] text-sm font-medium rounded-full hover:border-[#E07838] hover:text-[#E07838] transition-all duration-300"
             >
               {showAll ? (
                 <>
@@ -204,6 +227,49 @@ const Projects = () => {
           </div>
         )}
       </div>
+
+      {/* Lightbox */}
+      <AnimatePresence>
+        {lightbox && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-3 sm:p-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => setLightbox(null)}
+          >
+            <motion.div
+              className="relative max-w-5xl w-full"
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setLightbox(null)}
+                className="absolute -top-9 right-0 text-[#8C7C6E] hover:text-[#EDE4D6] transition-colors z-10"
+                aria-label="Close"
+              >
+                <X className="h-6 w-6" />
+              </button>
+              <div className="relative w-full rounded-xl overflow-hidden border border-[#2A2018]">
+                <Image
+                  src={lightbox.src}
+                  alt={lightbox.alt}
+                  width={1200}
+                  height={800}
+                  className="object-contain w-full h-auto max-h-[80vh]"
+                />
+              </div>
+              <p className="text-center text-[#5A4C44] text-sm mt-3">
+                {lightbox.alt}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

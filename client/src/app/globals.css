@@ -72,9 +72,9 @@
     @apply border-border;
   }
   body {
-    background: bg-background;
-    color: text-foreground;
-    /* @apply bg-background text-foreground; */
+    background-color: #0E0B08;
+    color: #EDE4D6;
+    overflow-x: hidden;
   }
 }
 
@@ -91,7 +91,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: #fbe4d6;
+  background-color: #E07838;
   transition: width 0.3s ease;
 }
 
@@ -127,6 +127,7 @@
 
 .section-heading {
   @apply text-3xl md:text-4xl font-bold mb-10 text-center relative inline-block;
+  color: #EDE4D6;
 }
 
 .section-heading::after {
@@ -135,12 +136,12 @@
   bottom: -10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background-color: #fbe4d6;
+  width: 40px;
+  height: 2px;
+  background-color: #E07838;
 }
 
 .section-container {
-  @apply py-20 px-6 relative;
+  @apply py-16 md:py-20 px-4 sm:px-6 relative;
 }
 

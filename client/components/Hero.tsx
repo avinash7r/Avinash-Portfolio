@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { Download, ArrowRight } from "lucide-react";
 import FloatingElements from "./FloatingElements";
 import Image from "next/image";
 
@@ -9,146 +9,94 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden bg-[#0E0B08]"
     >
-      {/* Floating elements in background */}
       <FloatingElements />
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col md:flex-row items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 pt-28 pb-16 md:py-20 relative z-10">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-16">
+          {/* Text Content */}
           <motion.div
-            className="md:w-2/5 relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
-            <div className="relative">
-              {/* Glowing circular background */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#261FB3] to-[#0C0950] blur-3xl opacity-30"></div>
-
-              {/* Profile image or placeholder */}
-              <div className="w-80 h-80 mx-auto relative">
-                <div className="w-full h-full rounded-full bg-gradient-to-br from-[#261FB3] to-[#0C0950] p-1 shadow-xl shadow-[#261FB3]/20">
-                  <div className="w-full h-full rounded-full bg-[#0C0950] flex items-center justify-center overflow-hidden">
-                    <Image
-                      src="/profile.jpg?height=320&width=320"
-                      alt="Avinash Rajure"
-                      width={320}
-                      height={320}
-                      className="object-cover"
-                      priority
-                    />
-                  </div>
-                </div>
-
-                {/* Orbit elements */}
-                <div className="absolute top-0 left-0 w-full h-full animate-spin-slow">
-                  <div className="absolute top-0 translate-x-1/2 w-8 h-8 rounded-full bg-[#FBE4D6]/80 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-[#0C0950]"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                    >
-                      <path d="M12 2a1 1 0 0 1 .894.553l2.991 5.657 6.615.96a1 1 0 0 1 .553 1.706l-4.803 4.674 1.133 6.596a1 1 0 0 1-1.45 1.054L12 20.058l-5.933 3.142a1 1 0 0 1-1.45-1.054l1.132-6.596-4.803-4.674a1 1 0 0 1 .553-1.706l6.615-.96 2.991-5.657A1 1 0 0 1 12 2z" />
-                    </svg>
-                  </div>
-                </div>
-
-                <div className="absolute top-0 left-0 w-full h-full animate-spin-slow-reverse">
-                  <div className="absolute bottom-0 translate-x-1/2 w-10 h-10 rounded-full bg-[#261FB3]/80 flex items-center justify-center">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-6 w-6 text-white"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" />
-                      <path d="M8 12h8" />
-                      <path d="M12 8v8" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            className="md:w-3/5 text-center md:text-left md:mt-0 mt-12"
-            initial={{ opacity: 0, y: 20 }}
+            className="md:w-3/5 text-center md:text-left order-2 md:order-1"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
+            transition={{ duration: 0.7 }}
           >
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight"
-              initial={{ opacity: 0, y: 30 }}
+            <motion.p
+              className="text-[#E07838] font-semibold tracking-widest text-sm uppercase mb-5"
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2, duration: 0.8 }}
+              transition={{ delay: 0.1, duration: 0.5 }}
             >
-              Hi, I'm{" "}
-              <span className="text-[#FBE4D6] inline-block relative">
-                Avinash
-                <span className="absolute -bottom-2 left-0 w-full h-1 bg-[#FBE4D6]"></span>
-              </span>
+              DevOps · Platform Engineering · Cloud
+            </motion.p>
+
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-[#EDE4D6] mb-6 leading-[1.1] font-poppins"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.7 }}
+            >
+              Avinash
+              <br />
+              <span className="text-[#E07838]">Rajure</span>
             </motion.h1>
 
-            <motion.div
-              className="text-xl md:text-2xl text-gray-300 mb-6"
-              initial={{ opacity: 0, y: 30 }}
+            <motion.p
+              className="text-[#8C7C6E] text-base md:text-lg leading-relaxed mb-8 md:mb-10 max-w-lg mx-auto md:mx-0"
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.8 }}
+              transition={{ delay: 0.3, duration: 0.7 }}
             >
-              <div className="flex items-center justify-center md:justify-start text-3xl font-bold text-white mb-2">
-                I'm a
-                <div className="ml-3 h-12 overflow-hidden">
-                  <motion.div
-                    animate={{ y: [0, -120, -240, -360, 0] }}
-                    transition={{
-                      duration: 8,
-                      repeat: Number.POSITIVE_INFINITY,
-                      repeatType: "loop",
-                      ease: "easeInOut",
-                      times: [0, 0.2, 0.4, 0.6, 1],
-                    }}
-                    className="flex flex-col gap-3 text-[#FBE4D6]"
-                  >
-                    <span>DevOps Engineer</span>
-                    <span>Platform Engineer</span>
-                    <span>Cloud Engineer</span>
-                  </motion.div>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-300 text-lg leading-relaxed">
-                DevOps Engineer focused on automating cloud infrastructure and
-                delivery pipelines using Docker, Kubernetes, Terraform, and
-                CI/CD. Hands-on experience with Linux and AWS, building
-                reliable, reproducible, production-ready systems.
-              </p>
-            </motion.div>
+              Building and operating cloud-native infrastructure on AWS -
+              Kubernetes, Terraform, GitOps, and CI/CD pipelines that are
+              automated, reproducible, and production-ready.
+            </motion.p>
 
             <motion.div
               className="flex flex-wrap gap-4 justify-center md:justify-start"
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
+              transition={{ delay: 0.4, duration: 0.7 }}
             >
               <a
                 href="#about"
-                className="px-6 py-3 bg-[#FBE4D6] text-[#0C0950] font-medium rounded-full hover:shadow-lg transition-all duration-300 hover:bg-white"
+                className="flex items-center gap-2 px-7 py-3.5 bg-[#E07838] text-[#0E0B08] font-semibold rounded-full hover:bg-[#F08848] transition-all duration-300"
               >
-                Contact Me
+                Get in Touch <ArrowRight className="h-4 w-4" />
               </a>
-
               <a
                 href="/Avinash-resume.pdf"
-                className="px-6 py-3 border border-[#FBE4D6] text-[#FBE4D6] font-medium rounded-full hover:bg-[#FBE4D6]/10 transition-all duration-300 flex items-center"
+                className="flex items-center gap-2 px-7 py-3.5 border border-[#2A2018] text-[#8C7C6E] font-medium rounded-full hover:border-[#E07838] hover:text-[#E07838] transition-all duration-300"
                 download
               >
-                Download CV <Download className="ml-2 h-4 w-4" />
+                Resume <Download className="h-4 w-4" />
               </a>
             </motion.div>
+          </motion.div>
+
+          {/* Profile Image */}
+          <motion.div
+            className="md:w-2/5 flex justify-center order-1 md:order-2"
+            initial={{ opacity: 0, scale: 0.92 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.15, duration: 0.8 }}
+          >
+            <div className="relative">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full p-[3px] bg-gradient-to-br from-[#E07838] via-[#9A4A1C] to-[#1C1814] shadow-2xl shadow-[#E07838]/10">
+                <div className="w-full h-full rounded-full overflow-hidden bg-[#1C1814]">
+                  <Image
+                    src="/profile.jpg"
+                    alt="Avinash Rajure"
+                    width={320}
+                    height={320}
+                    className="object-cover w-full h-full"
+                    priority
+                  />
+                </div>
+              </div>
+              <div className="absolute inset-0 rounded-full bg-[#E07838] opacity-[0.07] blur-3xl -z-10 scale-125" />
+            </div>
           </motion.div>
         </div>
       </div>
