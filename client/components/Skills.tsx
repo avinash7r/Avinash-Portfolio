@@ -6,7 +6,7 @@ import SectionHeading from "./SectionHeading"
 
 const skillCategories = [
   {
-    title: "Cloud Platforms",
+    title: "AWS Services",
     icon: <Cloud className="h-6 w-6" />,
     skills: [
       "AWS EKS",
@@ -33,7 +33,6 @@ const skillCategories = [
       "containerd",
       "Calico CNI",
       "Kubernetes Gateway API",
-      "Helm",
       "Kustomize",
     ],
   },
@@ -46,7 +45,6 @@ const skillCategories = [
       "VPC Provisioning",
       "EKS Cluster Provisioning",
       "IAM Role & Policy Automation",
-      "Helm Provider",
     ],
   },
   {
@@ -88,6 +86,7 @@ const skillCategories = [
       "Node.js",
       "Express.js",
       "Django",
+      "Spring Boot",
       "REST APIs",
       "JWT Authentication",
       "Nginx",

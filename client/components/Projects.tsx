@@ -22,26 +22,9 @@ const Projects = () => {
         "Docker",
         "Kubernetes",
       ],
-      image: "/placeholder.svg?height=300&width=500",
+      image: "/AWS EKS GitOps Infrastructure Platform.png?height=300&width=500",
       github: "https://github.com/avinash7r/aws-eks-gitops",
       demo: "https://github.com/avinash7r/aws-eks-gitops",
-    },
-    {
-      title: "Cloud-Native Kubernetes GitOps Platform",
-      description:
-        "Deployed frontend (Nginx) and backend (Node.js) as separate Kubernetes deployments on a local kind cluster with ingress-based path routing. Instrumented backend with Prometheus metrics (request count, HTTP status codes, latency histograms) and validated observability via PromQL. Implemented full GitOps pipeline: GitHub Actions CI → Kustomize image update → Argo CD reconciliation → cluster convergence, using immutable SHA-based image tagging.",
-      technologies: [
-        "Kubernetes",
-        "kind",
-        "Argo CD",
-        "Kustomize",
-        "Prometheus",
-        "GitHub Actions",
-        "Docker",
-      ],
-      image: "/placeholder.svg?height=300&width=500",
-      github: "https://github.com/avinash7r/k8s-gitops-platform",
-      demo: "https://github.com/avinash7r/k8s-gitops-platform",
     },
     {
       title: "AutoKube – Automated Kubernetes Cluster with Ansible",
